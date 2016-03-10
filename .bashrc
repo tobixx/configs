@@ -87,7 +87,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+#alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -113,5 +113,55 @@ if ! shopt -oq posix; then
   fi
 fi
 
+######################################################################
 # MY MODS
+
 set -o vi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+export PATH=~workspace/y/git/scripts:~/.local/bin/:~/.gem/ruby/1.9.1/bin:$PATH
+
+source ~/.local/bin/bashmarks.sh
+PROJECT_HOME=~/workspace/
+source ~/.local/bin/virtualenvwrapper.sh
+
+# Automatically activate Git projects' virtual environments based on the
+# directory name of the project. Virtual environment name can be overridden
+# by placing a .venv file in the project root with a virtualenv name in it
+function workon_cwd {
+    # Check that this is a Git repo
+    GIT_DIR=`git rev-parse --git-dir 2> /dev/null`
+    if [ $? == 0 ]; then
+        # Find the repo root and check for virtualenv name override
+        GIT_DIR=`\cd $GIT_DIR; pwd`
+        PROJECT_ROOT=`dirname "$GIT_DIR"`
+        ENV_NAME=`basename "$PROJECT_ROOT"`
+        if [ -f "$PROJECT_ROOT/.venv" ]; then
+            ENV_NAME=`cat "$PROJECT_ROOT/.venv"`
+        fi
+        # Activate the environment only if it is not already active
+        if [ "$VIRTUAL_ENV" != "$WORKON_HOME/$ENV_NAME" ]; then
+            if [ -e "$WORKON_HOME/$ENV_NAME/bin/activate" ]; then
+                workon "$ENV_NAME" && export CD_VIRTUAL_ENV="$ENV_NAME"
+            fi
+        fi
+    elif [ $CD_VIRTUAL_ENV ]; then
+        # We've just left the repo, deactivate the environment
+        # Note: this only happens if the virtualenv was activated automatically
+        deactivate && unset CD_VIRTUAL_ENV
+    fi
+}
+
+# New cd function that does the virtualenv magic
+function venv_cd {
+    cd "$@" && workon_cwd
+}
+
+alias cd="venv_cd"
+
+#automatic enable venvs
+
+#at the end because of path manipulation
+eval "$(pyenv init -)"
