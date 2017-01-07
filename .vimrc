@@ -19,6 +19,7 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
+Plugin 'thinca/vim-visualstar'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
@@ -35,6 +36,7 @@ let g:ultisnips_python_style = 'google'
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_server_python_interpreter = '/usr/bin/python'  
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
@@ -42,5 +44,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-set hls
-set inc
+set hlsearch
+set incsearch
+set cursorline
