@@ -124,7 +124,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH=~workspace/y/git/scripts:~/.local/bin/:~/.gem/ruby/1.9.1/bin:$PATH
 
 source ~/.local/bin/bashmarks.sh
-PROJECT_HOME=~/workspace/
+export PROJECT_HOME=~/workspace/
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
 source ~/.local/bin/virtualenvwrapper.sh
 
 # Automatically activate Git projects' virtual environments based on the
