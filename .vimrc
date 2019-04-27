@@ -48,6 +48,14 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 nmap  -  <Plug>(choosewin)
 " to use overlay feature
 let g:choosewin_overlay_enable = 1
+" for vim mouse support in tmux/screen
+
+set mouse=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 set hlsearch
 set incsearch
