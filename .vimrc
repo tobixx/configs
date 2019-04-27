@@ -44,6 +44,11 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" invoke choose win with '-'
+nmap  -  <Plug>(choosewin)
+" to use overlay feature
+let g:choosewin_overlay_enable = 1
+
 set hlsearch
 set incsearch
 set cursorline
