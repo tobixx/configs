@@ -65,3 +65,9 @@ end
 set hlsearch
 set incsearch
 set cursorline
+set number relativenumber
+
+"scroll down with space
+nmap <Space>  
+
+colorscheme koehler
