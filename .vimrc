@@ -12,14 +12,19 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'klen/python-mode'
 Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'eapache/auto-pairs'
-Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Tagbar'
+Plugin 'tpope/vim-fugitive'
 Plugin 'thinca/vim-visualstar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 't9md/vim-choosewin'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
