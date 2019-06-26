@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 't9md/vim-choosewin'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'tpope/vim-sensible'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
@@ -66,6 +67,7 @@ set hlsearch
 set incsearch
 set cursorline
 set number relativenumber
+set undofile
 
 "scroll down with space
 nmap <Space>  

@@ -590,6 +590,8 @@ autorunApps =
    "klipper",
    "nm-applet",
    "sxhkd",
+   "sxhkd",
+   "udiskie",
 }
 if autorun then
    for app = 1, #autorunApps do
