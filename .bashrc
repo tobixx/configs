@@ -125,9 +125,9 @@ export PATH=~workspace/y/git/scripts:~/.local/bin/:~/.gem/ruby/1.9.1/bin:$PATH
 
 source ~/.local/bin/bashmarks.sh
 export PROJECT_HOME=~/workspace/
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
-source ~/.local/bin/virtualenvwrapper.sh
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
+#source ~/.local/bin/virtualenvwrapper.sh
 
 #at the end because of path manipulation
 eval "$(pyenv init -)"
@@ -137,5 +137,8 @@ eval "$(aactivator init)"
 alias bat='upower -i $(upower -e | grep 'BAT') | grep -E "state|to\ full|time\ to\ empty|percentage"'
 
 export NMON=dctu.mnk
-eval $(thefuck --alias)
 alias bd=". bd -si"
+
+#eval "$(thefuck --alias)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
